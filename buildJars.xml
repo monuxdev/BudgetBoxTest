@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project testbudgetbox with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/jars"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/Bootstrap.jar">
+            <manifest>
+                <attribute name="Main-Class" value="testbudgetbox.BootStrapDbLauncher"/>
+                <attribute name="Class-Path" value=". lib/spark-core-2.9.3.jar lib/slf4j-api-1.7.25.jar lib/jetty-server-9.4.31.v20200723.jar lib/javax.servlet-api-3.1.0.jar lib/jetty-http-9.4.31.v20200723.jar lib/jetty-util-9.4.31.v20200723.jar lib/jetty-io-9.4.31.v20200723.jar lib/jetty-webapp-9.4.31.v20200723.jar lib/jetty-xml-9.4.31.v20200723.jar lib/jetty-servlet-9.4.31.v20200723.jar lib/jetty-security-9.4.31.v20200723.jar lib/websocket-server-9.4.31.v20200723.jar lib/websocket-common-9.4.31.v20200723.jar lib/websocket-client-9.4.31.v20200723.jar lib/jetty-client-9.4.31.v20200723.jar lib/websocket-servlet-9.4.31.v20200723.jar lib/websocket-api-9.4.31.v20200723.jar lib/slf4j-simple-1.7.30.jar lib/postgresql-42.2.20.jar lib/checker-qual-3.5.0.jar lib/gson-2.8.6.jar"/>
+            </manifest>
+            <fileset dir="${dir.buildfile}/target/classes"/>
+        </jar>
+    	<jar destfile="${dir.jarfile}/ImportCsv.jar">
+    	    <manifest>
+    	        <attribute name="Main-Class" value="testbudgetbox.ImportCsvDbLauncher"/>
+    	        <attribute name="Class-Path" value=". lib/spark-core-2.9.3.jar lib/slf4j-api-1.7.25.jar lib/jetty-server-9.4.31.v20200723.jar lib/javax.servlet-api-3.1.0.jar lib/jetty-http-9.4.31.v20200723.jar lib/jetty-util-9.4.31.v20200723.jar lib/jetty-io-9.4.31.v20200723.jar lib/jetty-webapp-9.4.31.v20200723.jar lib/jetty-xml-9.4.31.v20200723.jar lib/jetty-servlet-9.4.31.v20200723.jar lib/jetty-security-9.4.31.v20200723.jar lib/websocket-server-9.4.31.v20200723.jar lib/websocket-common-9.4.31.v20200723.jar lib/websocket-client-9.4.31.v20200723.jar lib/jetty-client-9.4.31.v20200723.jar lib/websocket-servlet-9.4.31.v20200723.jar lib/websocket-api-9.4.31.v20200723.jar lib/slf4j-simple-1.7.30.jar lib/postgresql-42.2.20.jar lib/checker-qual-3.5.0.jar lib/gson-2.8.6.jar"/>
+    	    </manifest>
+    	    <fileset dir="${dir.buildfile}/target/classes"/>
+    	</jar>
+        <delete dir="${dir.jarfile}/lib"/>
+        <mkdir dir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/com/sparkjava/spark-core/2.9.3/spark-core-2.9.3.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-server/9.4.31.v20200723/jetty-server-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-http/9.4.31.v20200723/jetty-http-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-util/9.4.31.v20200723/jetty-util-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-io/9.4.31.v20200723/jetty-io-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-webapp/9.4.31.v20200723/jetty-webapp-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-xml/9.4.31.v20200723/jetty-xml-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.31.v20200723/jetty-servlet-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-security/9.4.31.v20200723/jetty-security-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/websocket/websocket-server/9.4.31.v20200723/websocket-server-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/websocket/websocket-common/9.4.31.v20200723/websocket-common-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.4.31.v20200723/websocket-client-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/jetty-client/9.4.31.v20200723/jetty-client-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/websocket/websocket-servlet/9.4.31.v20200723/websocket-servlet-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/eclipse/jetty/websocket/websocket-api/9.4.31.v20200723/websocket-api-9.4.31.v20200723.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/slf4j/slf4j-simple/1.7.30/slf4j-simple-1.7.30.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/postgresql/postgresql/42.2.20/postgresql-42.2.20.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar" todir="${dir.jarfile}/lib"/>
+        <copy file="/home/chihiro/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar" todir="${dir.jarfile}/lib"/>
+    </target>
+</project>
