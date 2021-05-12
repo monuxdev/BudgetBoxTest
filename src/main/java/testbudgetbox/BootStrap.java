@@ -34,7 +34,7 @@ public class BootStrap {
 	}
 	
 	public void start(){
-		initExceptionHandler((e) -> logger.error("Server not starting"));
+		initExceptionHandler((e) -> logger.error("Server not starting\n"+e.getMessage()));
 	    before("/*", (q, a) -> logger.info("Received api call"));
 		// conservé pour vérifier que le serveur fonctionne.
 		get("/", (req, res) -> "Hello World");

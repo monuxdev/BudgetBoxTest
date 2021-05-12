@@ -4,7 +4,6 @@ import java.util.List;
 
 import testbudgetbox.commons.Groupe;
 import testbudgetbox.commons.Repository;
-import testbudgetbox.commons.SousGroupe;
 
 public class GroupeService {
 	
